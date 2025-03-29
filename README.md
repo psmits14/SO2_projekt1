@@ -83,3 +83,4 @@ Możesz również uruchomić program z domyślną wartością 5 filozofów polec
 ```bash
 make run
 ```
+
