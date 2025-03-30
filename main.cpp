@@ -46,7 +46,7 @@ public:
             }
             this_thread::sleep_for(chrono::milliseconds(dist(gen)));
 
-            // Attempting to pick up forks
+             // Determine left and right forks
             int left_fork = id;
             int right_fork = (id + 1) % num_philosophers;
 
