@@ -20,12 +20,13 @@ struct Philosopher {
 class DiningPhilosophers {
 private:
     int num_philosophers;
-    vector<Fork> forks;
-    vector<Philosopher> philosophers;
-    vector<thread> philosopher_threads;
-    mutex cout_mutex;  // Mutex for synchronizing cout
+    vector<Fork> forks;                          // Vector of forks, one between each philosopher
+    vector<Philosopher> philosophers;            // Vector of philosopher objects
+    vector<thread> philosopher_threads;          // Threads for each philosopher
+    mutex cout_mutex;                            // Mutex to synchronize cout
 
 public:
+    // Constructor initializes philosophers and forks
     DiningPhilosophers(int n) : num_philosophers(n), forks(n) {
         for (int i = 0; i < num_philosophers; i++) {
             philosophers.emplace_back(i);
@@ -71,11 +72,13 @@ public:
         }
     }
 
+     // Starts the simulation by launching philosopher threads
     void start() {
         for (int i = 0; i < num_philosophers; i++) {
             philosopher_threads.emplace_back(&DiningPhilosophers::philosopher, this, i);
         }
 
+        // Wait for all philosopher threads to finish (in practice, they run infinitely)
         for (auto& p : philosopher_threads) {
             p.join();
         }
@@ -95,7 +98,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     
-    DiningPhilosophers dp(num_philosophers);
+    DiningPhilosophers dp(num_philosophers);  // Create simulation instance
     cout << "Dinner is served!" << endl;
     dp.start();
 
