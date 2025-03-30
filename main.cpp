@@ -14,7 +14,7 @@ struct Fork {
 
 struct Philosopher {
     int id;
-    Philosopher(int _id) : id(_id) {}
+    Philosopher(int _id) : id(_id) {}   // Constructor
 };
 
 class DiningPhilosophers {
@@ -27,7 +27,7 @@ private:
 
 public:
     // Constructor initializes philosophers and forks
-    DiningPhilosophers(int n) : num_philosophers(n), forks(n) {
+    DiningPhilosophers(int n) : num_philosophers(n), forks(n) {         
         for (int i = 0; i < num_philosophers; i++) {
             philosophers.emplace_back(i);
         }
@@ -75,12 +75,12 @@ public:
      // Starts the simulation by launching philosopher threads
     void start() {
         for (int i = 0; i < num_philosophers; i++) {
-            philosopher_threads.emplace_back(&DiningPhilosophers::philosopher, this, i);
+            philosopher_threads.emplace_back(&DiningPhilosophers::philosopher, this, i);    
         }
 
         // Wait for all philosopher threads to finish (in practice, they run infinitely)
         for (auto& p : philosopher_threads) {
-            p.join();
+            p.join();                               
         }
     }
 };
