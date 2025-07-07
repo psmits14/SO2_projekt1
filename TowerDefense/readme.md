@@ -111,8 +111,8 @@ TowerDefence/
 
 1. **Sklonuj repozytorium:**
    ```bash
-   git clone https://github.com/Ellemire/SystemyOperacyjne2-Projekt
-   cd SystemyOperacyjne2-Projekt/TowerDefence
+   git clone https://github.com/psmits14/systemy-operacyjne-2-projekt/
+   cd systemy-operacyjne-2-projekt/TowerDefense
     ```
 
 2. **Utwórz środowisko wirtualne:**
