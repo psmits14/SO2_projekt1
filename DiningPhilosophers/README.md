@@ -44,8 +44,8 @@ Dzięki tej strategii przynajmniej jeden z filozofów zawsze będzie mógł zaj�
 ### 1. Aby uruchomić projekt lokalnie, najpierw sklonuj repozytorium:
 
 ```bash
-git clone https://github.com/psmits14/SO2_projekt1.git
-cd SO2_projekt1
+git clone https://github.com/psmits14/systemy-operacyjne-2-projekt/
+cd systemy-operacyjne-2-projekt/DiningPhilosophers
 ```
 
 > Alternatywnie możesz pobrać projekt jako `.zip` i rozpakować go lokalnie.
