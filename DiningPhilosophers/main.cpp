@@ -27,7 +27,7 @@ private:
 
 public:
     // Constructor initializes philosophers and forks
-    DiningPhilosophers(int n) : num_philosophers(n), forks(n) {         
+    DiningPhilosophers(int n) : num_philosophers(n), forks(n) {         // ustawia zmienną liczba filozofów na n, inicjalizuje wektor forks z n elementami 
         for (int i = 0; i < num_philosophers; i++) {
             philosophers.emplace_back(i);
         }
@@ -75,7 +75,7 @@ public:
      // Starts the simulation by launching philosopher threads
     void start() {
         for (int i = 0; i < num_philosophers; i++) {
-            philosopher_threads.emplace_back(&DiningPhilosophers::philosopher, this, i);    
+            philosopher_threads.emplace_back(&DiningPhilosophers::philosopher, this, i);    //thread: (wsk do funkcji klasy, obiekt na ktorym wywołać metodę, argument przekazywany do funkcji)
         }
 
         // Wait for all philosopher threads to finish (in practice, they run infinitely)
